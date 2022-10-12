@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List - Keep track of records</title>
+    <link rel="stylesheet" href="libs/fontawesome-free-6.1.2-web/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="dist/script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="title">A Simple Todo List</h2>
+            <nav>
+                <label for="filter">Filter: </label>
+                <select name="filter" id="filter">
+                    <option value="all">All</option>
+                    <option value="completed">Completed</option>
+                    <option value="pending">Pending</option>
+                    <option value="deleted">Trash</option>
+                    <option value="everything">Every single thing</option>
+                </select>
+                <button class="change-theme btn" style="background: linear-gradient(to top left, var(--white-1), var(--black-1));">Change theme</button>
+                <button title="Empty Trash/Recycle bin" class="trash-button btn empty-trash danger"><i class="fas fa-trash"></i></button>
+                <button title="Clear all list item" class="trash-button btn clear-all-item danger"><i class="fas fa-remove"></i></button>
+            </nav>
+        </header>
+        <div class="status"><p>You currently have no item in your todos</p></div>
+        <ul id="list">
+            <!-- <li>
+                <p class="list-content">
+                    This is a todo list
+                </p>
+                <div class="options">
+                    <button class="btn">Move up</button>
+                    <button class="btn preview cool">Preview</button>
+                    <button class="btn">Edit</button>
+                    <button class="btn">Move to trash</button>
+                    <button class="btn">Move down</button>
+                </div>
+            </li>-->
+        </ul>
+
+        <form class="add-item-form">
+            <fieldset>
+                <legend>Add list item</legend>
+                <input type="text" id="add_item_input" placeholder="Enter list item to add">
+                <button type="submit" class="btn cool" id="add_item_button">Add item</button>
+                <p class="add-item-error"></p>
+            </fieldset>
+        </form>
+    </div>
+
+    <div id="show_area">
+        <div id="show_box">
+            <div class="close" data-target="#show_area"></div>
+            <div class="render-area">
+                <h2>Item No: ??</h2>
+                <p>No List item to display</p>
+                <div class="options">
+                    <button class="cool btn" disabled>Move up</button>
+                    <button class="success btn" disabled>Complete</button>
+                    <button class="editor btn" disabled>Edit</button>
+                    <button class="danger btn" disabled>Move to trash</button>
+                    <button class="cool btn" disabled>Move down</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
